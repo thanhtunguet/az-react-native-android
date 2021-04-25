@@ -1,0 +1,6 @@
+version: '3'
+services: 
+    agent:
+        image: android-agent:latest
+        env_file: .env
+        restart: always
