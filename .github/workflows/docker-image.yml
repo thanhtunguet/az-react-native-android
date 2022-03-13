@@ -11,14 +11,17 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
+    if: github.event_name == 'push'
+    env:
+      DOCKER_USERNAME: ${{ secrets.docker_username }}
+      DOCKER_PASSWORD: ${{ secrets.docker_password }}
+      TAG: ${{ github.run_id }}
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      env:
-        IMAGE: az-react-native-android:$(date +%s)
-        REGISTRY: ${{ secrets.DOCKER_REGISTRY }}
-      run: -|
-        export IMAGE=az-react-native-android:$(date +%s)
-        docker build . --file Dockerfile --tag $REGISTRY/$IMAGE
-        docker push $REGISTRY/$IMAGE
+      run: docker build . --file Dockerfile --tag thanhtunguet/az-react-native-android:$TAG
+    - name: Login to docker hub
+      run: echo ${DOCKER_PASSWORD} | docker login docker.io -u ${DOCKER_USERNAME} --password-stdin
+    - name: Push image to docker hub
+      run: docker push thanhtunguet/az-react-native-android:$TAG
+      
