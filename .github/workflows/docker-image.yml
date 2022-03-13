@@ -15,7 +15,10 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
+      env:
+        IMAGE: az-react-native-android:$(date +%s)
+        REGISTRY: ${{ secrets.DOCKER_REGISTRY }}
       run: -|
         export IMAGE=az-react-native-android:$(date +%s)
-        docker build . --file Dockerfile --tag ${{secrets.DOCKER_REGISTRY}}/$IMAGE
-        docker push ${{secrets.DOCKER_REGISTRY}}/$IMAGE
+        docker build . --file Dockerfile --tag $REGISTRY/$IMAGE
+        docker push $REGISTRY/$IMAGE
