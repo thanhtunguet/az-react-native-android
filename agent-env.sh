@@ -36,7 +36,7 @@ echo 'PATH="$JAVA_HOME/bin:$ANDROID_HOME/cmdline-tools/tools/bin:$ANDROID_HOME/p
 
 source ~/.bashrc
 
-curl -fsSL https://deb.nodesource.com/setup_15.x | bash -
+curl -fsSL https://deb.nodesource.com/setup_16.x | bash -
 apt-get install -y nodejs build-essential
 npm install --global yarn
 
