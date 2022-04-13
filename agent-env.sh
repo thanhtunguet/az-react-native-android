@@ -15,7 +15,7 @@ apt-get install -y --no-install-recommends \
         unzip \
         vim \
         tar \
-        openjdk-8-jdk  
+        openjdk-11-jdk
 
 mkdir ~/DevTools
 mkdir ~/DevTools/Android
