@@ -15,7 +15,8 @@ apt-get install -y --no-install-recommends \
         unzip \
         vim \
         tar \
-        openjdk-11-jdk
+        openjdk-11-jdk \
+        default-jdk
 
 mkdir ~/DevTools
 mkdir ~/DevTools/Android
@@ -26,7 +27,7 @@ mv tools ~/DevTools/Android/cmdline-tools/
 echo 'export PATH=$PATH:$JAVA_HOME/bin' >> ~/.bashrc
 
 echo 'DEV_TOOLS="/root/DevTools"'>> ~/.bashrc
-echo 'JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"' >> ~/.bashrc
+echo 'JAVA_HOME="/usr/lib/jvm/default-java"' >> ~/.bashrc
 echo 'ANDROID_HOME="$DEV_TOOLS/Android"' >> ~/.bashrc
 
 echo 'export JAVA_HOME' >> ~/.bashrc 
