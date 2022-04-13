@@ -26,7 +26,7 @@ mv tools ~/DevTools/Android/cmdline-tools/
 echo 'export PATH=$PATH:$JAVA_HOME/bin' >> ~/.bashrc
 
 echo 'DEV_TOOLS="/root/DevTools"'>> ~/.bashrc
-echo 'JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"' >> ~/.bashrc
+echo 'JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"' >> ~/.bashrc
 echo 'ANDROID_HOME="$DEV_TOOLS/Android"' >> ~/.bashrc
 
 echo 'export JAVA_HOME' >> ~/.bashrc 
