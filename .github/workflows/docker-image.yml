@@ -7,9 +7,7 @@ on:
     branches: [ master ]
 
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
     if: github.event_name == 'push'
     env:
@@ -20,8 +18,10 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag thanhtunguet/az-react-native-android:$TAG
-    - name: Login to docker hub
+    - name: Login to DockerHub
       run: echo ${DOCKER_PASSWORD} | docker login docker.io -u ${DOCKER_USERNAME} --password-stdin
-    - name: Push image to docker hub
-      run: docker push thanhtunguet/az-react-native-android:$TAG
-      
+    - name: Push image to DockerHub
+      run: |
+        docker tag thanhtunguet/az-react-native-android:$TAG docker push thanhtunguet/az-react-native-android:latest
+        docker push thanhtunguet/az-react-native-android:$TAG
+        docker push thanhtunguet/az-react-native-android:latest
