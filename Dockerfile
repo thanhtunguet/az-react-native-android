@@ -4,7 +4,7 @@ FROM ubuntu:20.04
 # configure apt to not require confirmation (assume the -y argument by default)
 ENV DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get update && apt-get install apt-utils curl cmake -y
+RUN apt-get update && apt-get install apt-utils curl -y
 
 RUN echo "APT::Get::Assume-Yes \"true\";" > /etc/apt/apt.conf.d/90assumeyes
 
@@ -22,5 +22,7 @@ WORKDIR /azp
 
 COPY ./start.sh .
 RUN chmod +x start.sh
+COPY cmake/ ./cmake/
+RUN echo 'export PATH="/azp/cmake/bin:${PATH}"' > ~/.profile
 
 CMD ["./start.sh"]
