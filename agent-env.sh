@@ -1,5 +1,8 @@
 #!/bin/bash
 
+apt-get update
+apt-get install apt-utils curl -y
+
 curl -fsSL https://deb.nodesource.com/setup_16.x | bash -
 
 apt-get update
@@ -18,8 +21,6 @@ apt-get install -y \
         vim \
         tar \
         openjdk-11-jdk \
-        apt-utils \
-        curl \
         libicu-dev \
         build-essential \
         nodejs
