@@ -1,7 +1,7 @@
 #!/bin/bash
 
 apt-get update
-apt-get install apt-utils curl -y
+apt-get install apt-utils curl wget -y
 
 curl -fsSL https://deb.nodesource.com/setup_16.x | bash -
 
