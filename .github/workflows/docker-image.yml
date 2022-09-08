@@ -22,6 +22,6 @@ jobs:
       run: echo ${DOCKER_PASSWORD} | docker login docker.io -u ${DOCKER_USERNAME} --password-stdin
     - name: Push image to DockerHub
       run: |
-        docker tag thanhtunguet/az-react-native-android:$TAG docker push thanhtunguet/az-react-native-android:latest
+        docker tag thanhtunguet/az-react-native-android:$TAG thanhtunguet/az-react-native-android:latest
         docker push thanhtunguet/az-react-native-android:$TAG
         docker push thanhtunguet/az-react-native-android:latest
