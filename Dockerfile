@@ -20,6 +20,5 @@ WORKDIR /azp
 
 COPY ./start.sh .
 RUN chmod +x start.sh
-COPY cmake/ ./cmake/
 
 CMD ["./start.sh"]
