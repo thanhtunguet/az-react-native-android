@@ -4,7 +4,7 @@ FROM ubuntu:20.04
 # configure apt to not require confirmation (assume the -y argument by default)
 ENV DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get update && apt-get install apt-utils curl -y
+RUN apt-get update && apt-get install apt-utils curl libicu-dev -y
 
 RUN echo "APT::Get::Assume-Yes \"true\";" > /etc/apt/apt.conf.d/90assumeyes
 
