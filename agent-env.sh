@@ -20,7 +20,7 @@ apt-get install -y \
         unzip \
         vim \
         tar \
-        openjdk-11-jdk \
+        default-jdk \
         libicu-dev \
         build-essential \
         nodejs
