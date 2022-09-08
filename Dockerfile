@@ -6,7 +6,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 RUN echo "APT::Get::Assume-Yes \"true\";" > /etc/apt/apt.conf.d/90assumeyes
 
-RUN apt-get update && apt-get install apt-utils -y
+RUN apt-get update && apt-get install apt-utils curl -y
 
 COPY ./tools tools
 COPY ./agent-env.sh .
