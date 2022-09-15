@@ -16,4 +16,6 @@ yes | sdkmanager  "build-tools;32.0.0"
 yes | sdkmanager "platform-tools" "platforms;android-33"
 yes | sdkmanager  "build-tools;33.0.0"
 
+yes | sdkmanager "cmake;3.18.1"
+
 # sdkmanager --update
