@@ -43,6 +43,6 @@ echo 'JAVA_HOME="/usr/lib/jvm/default-java"' >> ~/.bashrc
 echo 'ANDROID_HOME="$DEV_TOOLS/Android"' >> ~/.bashrc
 echo 'export JAVA_HOME' >> ~/.bashrc 
 echo 'export ANDROID_HOME' >> ~/.bashrc
-echo 'export PATH="$JAVA_HOME/bin:$ANDROID_HOME/cmdline-tools/tools/bin:$ANDROID_HOME/platform-tools:/root/DevTools/Android/build-tools/29.0.2:/root/DevTools/Android/build-tools/29.0.3:${PATH}"' >> ~/.bashrc
+echo 'export PATH="/root/DevTools/Android/cmake/3.18.1/bin:$JAVA_HOME/bin:$ANDROID_HOME/cmdline-tools/tools/bin:$ANDROID_HOME/platform-tools:/root/DevTools/Android/build-tools/29.0.2:/root/DevTools/Android/build-tools/29.0.3:${PATH}"' >> ~/.bashrc
 
 source ~/.bashrc
